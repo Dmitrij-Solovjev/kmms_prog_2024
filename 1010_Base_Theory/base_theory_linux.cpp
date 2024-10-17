@@ -4,7 +4,6 @@
 void func(char msg[], const char const_msg[], const char* const super_const_msg);
 
 int main() {
-    //setlocale(LC_ALL, "Russian");
 
     const char space = ' ';
 
@@ -81,7 +80,7 @@ int main() {
            
         std::cout << "*(ptr_arr + 1) = " << *(ptr_arr + 1) << std::endl;
         std::cout << "ptr_arr - &arr[0] = " << ptr_arr - &arr[0] << std::endl;
-        //*(ptr_arr += 1) = 0;
+        // *(ptr_arr += 1) = 0;
 
         std::cout << std::endl << std::endl;
     }
@@ -122,22 +121,19 @@ int main() {
         //char* error_msg = "Меня константу хотят присвоить обычной переменной!";
         const char* const_value_msg = "Мне нельзя менять значения, но можно присвоить адрес на другую строку!";
         const char* const super_const_msg = "А меня вообще никак нельзя менять!";
-        
-        
-        //char* super_duper_const_msg = "Указатель менять нельзя, зато можно изменить строку"; //нельзя изменить ничего, т.к. память мы не выделили
-        
-        //auto super_duper_const_msg = (char*)malloc(48*2);
-        char *super_duper_const_msg = new char[48*2];
-        super_duper_const_msg = "Указатель менять нельзя, зато можно изменить строку";
 
-        //super_duper_const_msg[10] = '#';
-        
+        //char* super_duper_const_msg = "Указатель менять нельзя, зато можно изменить строку"; //нельзя изменить ничего, т.к. память мы не выделили
+
+        char *super_duper_const_msg = new char[48*2];
+        super_duper_const_msg = "asdasdada";
+
+        super_duper_const_msg[10] = '#';
+
         for (int i=0; i< 48*2; i++) {
-          std::cout << super_duper_const_msg[i];
+            std::cout << super_duper_const_msg[i];
         }
-        
+
         std::cout << std::endl;
-        
 
         //const_value_msg[0] = 'Б';
         const_value_msg = super_const_msg;
